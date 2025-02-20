@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Project</title>
+      <!-- CSS only -->
+      <link rel="stylesheet" href="/styles/style.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+      <!-- JS only -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+      <header  id="top">
+        <nav class="nav navbar navbar-expand-lg sticky-top nav-bg">
+            <div class="container-fluid">
+                <img src="pictures/Logo.jpeg" class="img-fluid" alt="Logo" style="max-width: 120px;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarlinks">
+                <span class="navbar-toggler-icon custom-toggler"></span>
+                </button>
+                <div id="navbarlinks" class="collapse navbar-collapse justify-content-end">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="About.html">About</a>
+                    <a class="nav-link" href="Service.html">Service</a>
+                    <a class="nav-link" href="Projects.html">Projects</a>
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </div>
+            </div>
+        </nav>
+      </header>
+      <main class="container-fluid">
+        <section id="banner">
+          <div class="position-relative">
+              <img src="pictures/banner.jpg" class="banner-img">
+              <h1 class="banner-content bg-light bg-opacity-75 w-100">Our Projects</h1>
+          </div>
+        </section>
+
+        <section id="projects" class="py-5">
+          <div class="container" style="max-width: 1000px;">
+            <div class="text-center">
+              <p class="lh-base my-2">Explore our key projects that showcase our excellence in automotive engineering and drafting services. From innovative designs and rigorous testing to advanced simulations and precise drafting, see how we transform visions into reality and set new standards of excellence in the industry.</p>
+            </div>
+            <div class="d-flex justify-content-center my-3">
+              <form action="/searchprojects" method="post" name="searchprojects" id="searchprojects"  class="d-flex position-relative mt-3" style="min-width: 50%;">
+                <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search" name="projectnamekeyword" required>
+                <input type="image" src="pictures/search.png" class="bi bi-search search-icon" alt="search">
+              </form>
+            </div>
+            <div class="text-center">
+              <p class="lh-base my-2">Type in keyword in project name to find existing projects and their status.</p>
+            </div>
+            
+            <div class="row mt-5">
+              <div class="card col-md-4">
+                <img src="pictures/tipper1.jpeg" class="card-img-top card-img" alt="truck1">
+                <div class="card-body bg-light">
+                  <a class="collapse-link collapse-border-bottom text-decoration-none text-dark my-2" data-bs-toggle="collapse" href="#tipperProject" aria-expanded="true" aria-controls="tipperProject">
+                    <h5 class="collapse-border-bottom">Heavy Duty Tipper</h5>
+                  </a>
+                  <p class="card-text my-3"> Robust heavy-duty tipper truck designed for powerful performance in tough conditions.</p>
+                </div>
+              </div>
+              <div class="card col-md-4">
+                <img src="pictures/jig1.jpg" class="card-img-top card-img" alt="truck2">
+                <div class="card-body">
+                  <a class="collapse-link text-decoration-none text-dark my-2" data-bs-toggle="collapse" href="#jigProject" aria-expanded="true" aria-controls="jigProject">
+                    <h5 class="">Factory Production Line</h5>
+                  </a>
+                  <p class="card-text my-3">Advanced automation techniques on a factory production line, demonstrating modern manufacturing capabilities. </p>
+                  </div>
+              </div>
+              <div class="card col-md-4">
+                <img src="pictures/modelling2.jpg" class="card-img-top card-img" alt="...">
+                <div class="card-body">
+                  <a class="collapse-link text-decoration-none text-dark my-2" data-bs-toggle="collapse" href="#modellingProject" aria-expanded="true" aria-controls="modellingProject">
+                    <h5 class="">3D Model</h5>
+                  </a>
+                  <p class="card-text my-3">Sleek 3D model of a motorcycle, showcasing advanced design techniques with striking copper and black colors.</p>
+                  </div>
+              </div>
+            </div>
+            <div class="collapse show" id="tipperProject">
+              <div class="bg-light p-5">
+                <h5 class="text-uppercase py-2">Project Details</h5>
+                <div class="py-2">
+                  <p><strong>Heavy-Duty Tipper Truck Project</strong></p>
+                  <p><strong>Project Overview:</strong> This project focuses on the design and development of a robust heavy-duty tipper truck, engineered to excel in challenging environments. The truck is built to handle tough conditions, making it ideal for construction sites, mining operations, and other demanding applications.</p>
+                  <p><strong>Key Features:</strong> Powerful performance, durable construction, advanced suspension system, efficient hydraulics, and modern safety features.</p>
+                  <p><strong>Design Highlights:</strong> Sleek and functional design, ergonomic cabin, and customizable options.</p>
+                  <p><strong>Applications:</strong> Construction, mining, agriculture, and waste management.</p>
+                  <p><strong>Conclusion:</strong> The heavy-duty tipper truck project showcases a vehicle that is powerful, durable, versatile, and efficient, meeting the demands of various industries.</p>
+                </div>
+                <h5 class="text-uppercase py-2">Project Pothograph</h5>
+                <div id="trailerCarousel" class="carousel slide carousel-fade carousel-font" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="pictures/tipper1.jpeg" class="project-carousel-img ">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="pictures/tipper2.jpg" class="project-carousel-img ">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#trailerCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#trailerCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="collapse" id="jigProject">
+              <div class="bg-light p-5">
+                <h5 class="text-uppercase py-2">Project Details</h5>
+                <div class="p-2">
+                  <p><strong>Factory Automation Project</strong></p>
+                  <p><strong>Project Overview:</strong> This project highlights advanced automation techniques on a factory production line, demonstrating modern manufacturing capabilities.</p>
+                  <p><strong>Key Features:</strong> Efficient automation, precision in manufacturing, and enhanced productivity.</p>
+                  <p><strong>Design Highlights:</strong> Integration of cutting-edge technology, streamlined processes, and high-quality output.</p>
+                  <p><strong>Applications:</strong> Automotive, electronics, and general manufacturing industries.</p>
+                  <p><strong>Conclusion:</strong> The factory automation project showcases the power of modern technology in enhancing manufacturing efficiency and productivity.</p>
+                </div>
+                <h5 class="text-uppercase py-2">Project Pothograph</h5>
+                <div id="p2Carousel" class="carousel slide carousel-fade carousel-font" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="pictures/jig1.jpg" class="project-carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="pictures/jig2.jpeg" class="project-carousel-img">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#p2Carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#p2Carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon">
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="collapse" id="modellingProject">
+              <div class="bg-light p-5">
+                <h5 class="text-uppercase py-2">Project Details</h5>
+                <p class="p-2">
+                  <p><strong>3D Motorcycle Model Project</strong></p>
+                  <p><strong>Project Overview:</strong> This project features a sleek 3D model of a motorcycle, showcasing advanced design techniques with striking copper and black colors.</p>
+                  <p><strong>Key Features:</strong> Detailed 3D modeling, realistic textures, and high-quality rendering.</p>
+                  <p><strong>Design Highlights:</strong> Sleek design, attention to detail, and visually striking color scheme.</p>
+                  <p><strong>Applications:</strong> Vehicle design, graphic design, and 3D modeling showcases.</p>
+                  <p><strong>Conclusion:</strong> The 3D motorcycle model project demonstrates the capabilities of advanced 3D modeling and design techniques, resulting in a visually impressive and detailed model.</p>
+                </p>
+                <h5 class="text-uppercase py-2">Project Pothograph</h5>
+                <div id="p3Carousel" class="carousel slide carousel-fade carousel-font" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="pictures/modelling1.jpg" class="project-carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="pictures/modelling2.jpg" class="project-carousel-img">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#p3Carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#p3Carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon">
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <a href="#top" data-bs-toggle="tooltip" title="This will take you to the top of the page!" class="d-block text-center mt-5 mb-3">
+              <img src="pictures/top.png" alt="top1" class="img-fluid" style="max-width: 30px;">
+            </a>
+          </div>
+        </section>
+
+        <section id="contact" class="py-5 content-with-dark-bg">
+          <div class="container text-cente" style="max-width: 800px;">
+            <div class="row align-items-center">
+              <div class="col-md-2 d-flex justify-content-center">
+                <img src="pictures/feedback.png" alt="top1" style="max-width: 50px;">
+              </div>
+              <div class="col-md-10 fs-4 d-flex justify-content-center">
+                <a href="Contact.html" class="text-dark">What service can we assist you with? -></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="container-fluid">
+        <section id="contact" class="py-3 content-with-bg">
+            <div class="container text-center" style="max-width: 600px;">
+              <div class="my-1 text-uppercase">
+                <h3>Contact us</h3>
+              </div>
+              <div class="my-1">
+                <p>Address: 123 Main Street, Melbourne, VIC 3000, Australia</p>
+              </div>
+              <div class="my-1">
+                <p>Phone number: (03) 1234 5678</p>
+                <p>Email address: info@yourbusiness.com</p>
+                <p>Website: <a href="http://www.yourbusiness.com">www.yourbusiness.com</a></p>
+              </div>
+            </div>
+        </section>
+        <section id="copyright" class="py-1 content-with-bg">
+          <div class="container text-center" style="max-width: 600px;">
+            <hr>
+            <img src="pictures/Logo.jpeg" alt="line" style="max-width: 60px;">
+            <p class="py-2">Copyright ©Alex Engineering. 2024. Last updated Aug 2024.</p>
+          </div>
+        </section>
+      </footer>
+    </body>
+
+      <!-- Optional JavaScript -- ADDED TO END OF YOUR BODY SECTION -->
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const collapseLinks = document.querySelectorAll('.collapse-link');
+        const collapses = document.querySelectorAll('.collapse');
+        
+        collapseLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                
+                // Remove classes from all collapse links and card bodies
+                collapseLinks.forEach(link => {
+                    link.querySelector('h5').classList.remove('collapse-border-bottom');
+                    link.closest('.card-body').classList.remove('bg-light');
+                });
+                
+                // Hide all collapses
+                collapses.forEach(collapse => {
+                    collapse.classList.remove('show');
+                });
+                
+                // Add classes to the clicked link and its card body
+                this.querySelector('h5').classList.add('collapse-border-bottom');
+                this.closest('.card-body').classList.add('bg-light');
+                
+                // Show the related collapse
+                const targetCollapse = document.querySelector(this.getAttribute('href'));
+                targetCollapse.classList.add('show');
+
+                if (window.innerWidth < 768) {
+                  targetCollapse.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    </script>
+</html>
