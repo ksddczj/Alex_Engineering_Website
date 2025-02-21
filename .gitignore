@@ -29,3 +29,6 @@ bower_components
 
 # Dotenv environment variables file
 .env
+
+# Ignore Visual Studio Code settings
+.vscode/
