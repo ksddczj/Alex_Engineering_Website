@@ -153,13 +153,13 @@ body {
     --dark-bg-color: #407c80;
     --font-sans-serif: 'Work Sans', sans-serif;
     --carousel-caption-font-family: 'Albra-Italic';
-    --navbar-toggler-icon-bg: url('pictures/menu.png');
+    --navbar-toggler-icon-bg: url('../pictures/menu.png');
     --card-border-width: 0.5px;
     --card-border-color: #000;
     --card-border-radius: 1rem;
     --banner-content-bg: #FFF;
     --img-border-radius: 1rem;
-    --previous-icon-bg: url('pictures/left.png');
-    --next-icon-bg: url('pictures/right.png');
+    --previous-icon-bg: url('../pictures/left.png');
+    --next-icon-bg: url('../pictures/right.png');
 }
 
