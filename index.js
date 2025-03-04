@@ -12,13 +12,18 @@ app.use(express.static('public_html'))
 app.use(express.urlencoded({ extended: true }));
 
 const path = require('path'); // Added to support access to file system paths
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+// app.set('views', './view'); 
+//this is not recommended because if you if you execute node index.js from another path
+//for example from c:\ rather than the path where the index.js is located
+//the ./view will refer to c:\view. this is clearly the wrong path.
 app.set('view engine', 'ejs');
 
-// // set up DB
+// set up DB
 let sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database('.\\database\\myDB', sqlite3.OPEN_READWRITE, (err) => {
+let db = new sqlite3.Database(path.join(__dirname, '/database/myDB'), sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
             throw err.message;
         }else {
@@ -26,9 +31,9 @@ let db = new sqlite3.Database('.\\database\\myDB', sqlite3.OPEN_READWRITE, (err)
         }
 }); 
 
-// ********************************************
+
 // *** Other route/request handlers go here ***
-// ********************************************`
+
 
 app.post('/clientrequest', (req, res) => {
   const submittedData = req.body;
@@ -36,29 +41,21 @@ app.post('/clientrequest', (req, res) => {
   res.render('thankyou', { 
     submittedData: submittedData
   });
+
   // save submittedData to DB
   console.log("Client message received.")
 
-
-  let firstname = req.body.fname;
-  let lastname = req.body.lname;
-  let email = req.body.email;
-  let mobile = req.body.mobile;
-  let street = req.body.street;
-  let city = req.body.city;
-  let state = req.body.state;
-  let servicetype = req.body.servicetype;
-  let message = req.body.message;
-
-  // console.log(`First Name: ${firstname}`);
-  // console.log(`Last Name: ${lastname}`);
-  // console.log(`Email: ${email}`);
-  // console.log(`Mobile: ${mobile}`);
-  // console.log(`Street: ${street}`);
-  // console.log(`City: ${city}`);
-  // console.log(`State: ${state}`);
-  // console.log(`Service Type: ${servicetype}`);
-  // console.log(`Message: ${message}`);
+  const {
+    fname: firstname,
+    lname: lastname,
+    email,
+    mobile,
+    street,
+    city,
+    state,
+    servicetype,
+    message,
+  } = req.body;
 
   db.run(
     `INSERT INTO Client (firstname, lastname, email, mobile, street, city, state, servicetype, message) VALUES ('${firstname}', '${lastname}', '${email}', '${mobile}', '${street}', '${city}', '${state}', '${servicetype}', '${message}')`,
@@ -83,7 +80,7 @@ app.post("/searchprojects", (req, res) => {
 
 
 
-// Tell our application to listen to requests at port 3000 on the localhost
+//listen to port
 app.listen(port, ()=> {
   // When the application starts, print to the console that our app is
   // running at http://localhost:3000. Print another message indicating
