@@ -1,5 +1,6 @@
 let sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database(".\\database\\myDB", (err) => {
+let path = require('path');
+let db = new sqlite3.Database(path.join(__dirname, '/myDB'), (err) => {
   if (err) {
     throw err.message;
   } else {

@@ -5,13 +5,13 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000;
 
+const path = require('path'); // Added to support access to file system paths
+
 // Tell our application to serve all the files under the `public_html` directory
-app.use(express.static('public_html'))
+app.use(express.static(path.join(__dirname, 'public_html')));
 
 // Middleware to parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
-
-const path = require('path'); // Added to support access to file system paths
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,21 +21,11 @@ app.set('views', path.join(__dirname, 'views'));
 //the ./view will refer to c:\view. this is clearly the wrong path.
 app.set('view engine', 'ejs');
 
-// set up DB
-let sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database(path.join(__dirname, '/database/myDB'), sqlite3.OPEN_READWRITE, (err) => {
-        if (err) {
-            throw err.message;
-        }else {
-            console.log("DB connection successful.");
-        }
-}); 
+//require the DBOperation module
+const DBOperation = require(path.join(__dirname, '/database/DBOperation'));
 
-
-// *** Other route/request handlers go here ***
-
-
-app.post('/clientrequest', (req, res) => {
+// routes
+app.post('/clientrequest', async (req, res) => {
   const submittedData = req.body;
 
   res.render('thankyou', { 
@@ -44,41 +34,17 @@ app.post('/clientrequest', (req, res) => {
 
   // save submittedData to DB
   console.log("Client message received.")
-
-  const {
-    fname: firstname,
-    lname: lastname,
-    email,
-    mobile,
-    street,
-    city,
-    state,
-    servicetype,
-    message,
-  } = req.body;
-
-  db.run(
-    `INSERT INTO Client (firstname, lastname, email, mobile, street, city, state, servicetype, message) VALUES ('${firstname}', '${lastname}', '${email}', '${mobile}', '${street}', '${city}', '${state}', '${servicetype}', '${message}')`,
-    (err) => {
-      if (err) {
-        console.error(err.message);
-      } else {
-        console.log(`A row has been inserted to Table Client`);
-      }
-    }
-  );
+  await DBOperation.insertRowToDB(req);
 });
 
-app.post("/searchprojects", (req, res) => {
+app.post("/searchprojects", async (req, res) => {
   const searchTerm = req.body.projectnamekeyword;
   console.log(searchTerm);
   res.render("existingproject", {});
 
-  // save submittedData to DB
+  // await save submittedData to DB development pending
   console.log("Search project requested received.");
 });
-
-
 
 //listen to port
 app.listen(port, ()=> {
