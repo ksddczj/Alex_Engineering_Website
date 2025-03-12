@@ -21,11 +21,11 @@ app.set('views', path.join(__dirname, 'views'));
 //the ./view will refer to c:\view. this is clearly the wrong path.
 app.set('view engine', 'ejs');
 
-//require the DBOperation module
-const DBOperation = require(path.join(__dirname, '/database/DBOperation'));
+//require the insertRow method from DBOperation module
+const {insertRowToDB} = require(path.join(__dirname, '/database/DBOperation'));
 
-// routes
-app.post('/clientrequest', async (req, res) => {
+// **routes**
+app.post('/clientrequest', (req, res) => {
   const submittedData = req.body;
 
   res.render('thankyou', { 
@@ -34,7 +34,7 @@ app.post('/clientrequest', async (req, res) => {
 
   // save submittedData to DB
   console.log("Client message received.")
-  await DBOperation.insertRowToDB(req);
+  insertRowToDB(req); //
 });
 
 app.post("/searchprojects", async (req, res) => {
@@ -42,8 +42,9 @@ app.post("/searchprojects", async (req, res) => {
   console.log(searchTerm);
   res.render("existingproject", {});
 
-  // await save submittedData to DB development pending
-  console.log("Search project requested received.");
+  // logic to fetch data from DB and handle the fetched data afterwords 
+  // development pending
+  console.log("Search project request handled.");
 });
 
 //listen to port
